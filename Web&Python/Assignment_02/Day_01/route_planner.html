@@ -1,0 +1,43 @@
+<!-- Task 1: Construct the HTML5 structure for the city's transportation route planner interface using Flask templates.
+ -->
+<!-- route_planner.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Transportation Route Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart City Transportation Route Planner</h1>
+        <form>
+            <div class="form-group">
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" placeholder="Enter origin">
+            </div>
+            <div class="form-group">
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="Enter destination">
+            </div>
+            <div class="form-group">
+                <label for="mode">Mode of Transport:</label>
+                <select id="mode" name="mode">
+                    <option value="bus">Bus</option>
+                    <option value="train">Train</option>
+                    <option value="subway">Subway</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Plan Route</button>
+        </form>
+        <div id="route-options">
+            <!-- dynamically generated route options will be displayed here -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

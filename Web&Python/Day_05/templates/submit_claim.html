@@ -1,0 +1,39 @@
+<!-- Task 2: Configure Jinja2 Templating for Dynamic Content Rendering-->
+ <!-- submit_claim.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Claim</title>
+</head>
+<body>
+    <h1>Submit Claim</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <label for="policy_number">Policy Number:</label>
+        <br>
+        {{ form.policy_number(size=20) }}
+        <br>
+        <label for="claim_description">Claim Description:</label>
+        <br>
+        {{ form.claim_description(rows=10, cols=30) }}
+        <br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
+
+<!-- claim_confirmation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Confirmation</title>
+</head>
+<body>
+    <h1>Claim Confirmation</h1>
+    <p>Your claim for policy number {{ policy_number }} has been submitted successfully.</p>
+</body>
+</html>
